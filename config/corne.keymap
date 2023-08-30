@@ -23,6 +23,17 @@
         };
     };
 
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            label = "NEW_MACRO";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp N &kp O &kp A &kp H &kp DOT &kp R &kp O &kp U &kp S &kp E &kp AT &kp P &kp A &kp T &kp A &kp G &kp O &kp N &kp I &kp A &kp DOT &kp C &kp O &kp M>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -51,10 +62,10 @@
 
             label = "SPCNAV";
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&none    &kp ESC     &none     &none       &none  &kp TAB    &kp LC(C)    &kp UP  &kp LC(V)    &none  &kp BACKSPACE  &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHIFT    &none     &kp LEFT  &kp DOWN  &kp RIGHT    &none     &kp DELETE  &none
+&none      &none     &none     &none       &none    &none     &kp HOME     &none      &none  &kp END          &none  &none
+                               &none       &none    &none        &none     &none      &none
             >;
         };
 
