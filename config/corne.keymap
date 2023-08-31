@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -46,9 +47,9 @@
 
             label = "Base";
             bindings = <
-&none         &kp Q        &kp W        &kp E          &kp R        &kp T          &kp Y         &kp U        &kp I        &kp O            &kp P  &none
-&none  &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrm LSHIFT F      &lt 3 G          &kp H  &hrm LSHFT J  &hrm LGUI K  &hrm LALT L  &hrm LCTRL SEMI  &none
-&none         &kp Z        &kp X        &kp C          &kp V      &lt 4 B          &kp N         &kp M    &kp COMMA      &kp DOT         &kp FSLH  &none
+&none         &kp Q        &kp W        &kp E          &kp R        &kp T          &kp Y         &kp U        &kp I        &kp O                  &kp P  &none
+&none  &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrm LSHIFT F      &lt 3 G          &kp H  &hrm LSHFT J  &hrm LGUI K  &hrm LALT L  &hrm LCTRL APOSTROPHE  &none
+&none         &kp Z        &kp X        &kp C          &kp V      &lt 4 B          &kp N         &kp M    &kp COMMA      &kp DOT               &kp FSLH  &none
                                        &trans      &lt 2 RET  &lt 1 SPACE    &lt 1 SPACE    &lt 2 BSPC       &trans
             >;
         };
@@ -62,10 +63,10 @@
 
             label = "SPCNAV";
             bindings = <
-&none    &kp ESC     &none     &none       &none  &kp TAB    &kp LC(C)    &kp UP  &kp LC(V)    &none  &kp BACKSPACE  &none
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHIFT    &none     &kp LEFT  &kp DOWN  &kp RIGHT    &none     &kp DELETE  &none
-&none      &none     &none     &none       &none    &none     &kp HOME     &none      &none  &kp END          &none  &none
-                               &none       &none    &none        &none     &none      &none
+&none    &kp ESC  &kp SEMI  &kp LEFT_BRACKET     &kp RIGHT_BRACKET                &kp TAB    &kp LC(C)         &kp UP    &kp LC(V)  &kp LG(TAB)    &kp BACKSPACE  &none
+&none  &kp LCTRL  &kp LALT          &kp LGUI            &kp LSHIFT                  &none     &kp LEFT       &kp DOWN    &kp RIGHT  &kp LC(TAB)       &kp DELETE  &none
+&none      &none     &none             &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP      &kp END  &kp PRINTSCREEN  &none
+                                       &none                 &none                  &none        &none          &none        &none
             >;
         };
 
@@ -78,19 +79,19 @@
 
             label = "MEDNUM";
             bindings = <
-&none   &none   &none   &none   &none   &none    &none   &none  &none  &none  &none  &none
-&none  &trans  &trans  &trans  &trans  &trans    &none   &none  &none  &none  &none  &none
-&none  &trans  &trans  &trans  &trans  &trans    &none   &none  &none  &none  &none  &none
-                        &none  &trans   &none    &none  &trans  &none
+&none     &kp KP_MINUS      &kp KP_PLUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9     &kp EXCL         &kp AT     &kp POUND            &kp DOLLAR            &kp PERCENT  &none
+&none  &kp KP_MULTIPLY       &kp KP_DOT  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
+&none    &kp KP_DIVIDE  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3    &kp MINUS      &kp EQUAL     &kp COMMA               &kp DOT              &kp SLASH  &none
+                                                   &none            &none       &kp RETURN        &none          &none     &kp LSHFT
             >;
         };
 
         GFUNCT {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&none  &kp F1   &kp F2   &kp F3   &kp F4  &kp GRAVE      &kp C_VOLUME_UP  &kp K_PLAY_PAUSE       &none  &none  &none  &none
+&none  &kp F5   &kp F6   &kp F7   &kp F8      &none    &kp C_VOLUME_DOWN        &kp K_PREV  &kp K_NEXT  &none  &none  &none
+&none  &kp F9  &kp F10  &kp F11  &kp F12      &none           &kp K_MUTE             &none       &none  &none  &none  &none
+                          &none    &none      &none                &none             &none       &none
             >;
 
             label = "GFUNCT";
@@ -98,10 +99,10 @@
 
         UTIL {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+&none         &none         &none         &none         &none    &bt BT_CLR    &none  &none  &none  &none  &none  &none
+&none    &new_macro         &none         &none         &none         &none    &none  &none  &none  &none  &none  &none
+                                          &none         &none         &none    &none  &none  &none
             >;
 
             label = "UTIL";
