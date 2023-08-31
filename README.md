@@ -40,4 +40,4 @@ The default layer mostly your alphas. Use of homerow mods in CAGS-SGAC configura
 
 ## Ref Image
 
-!(my_keymap (1).png)
+![keymap](/my_keymap.svg)
